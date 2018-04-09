@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2018 at 11:32 PM
+-- Generation Time: Apr 09, 2018 at 11:45 PM
 -- Server version: 10.1.26-MariaDB-0+deb9u1
 -- PHP Version: 7.0.29-1+0~20180405085419.17+stretch~1.gbp7bc4a6
 
@@ -153,7 +153,7 @@ CREATE TABLE `data_types` (
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `created_at`, `updated_at`) VALUES
-(1, 'posts', 'posts', 'post', 'posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '2018-04-09 08:37:31', '2018-04-09 09:10:45'),
+(1, 'posts', 'posts', 'Post', 'Post', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '2018-04-09 08:37:31', '2018-04-09 09:45:01'),
 (2, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, NULL, NULL, 1, 0, '2018-04-09 08:37:31', '2018-04-09 09:09:29'),
 (3, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', NULL, NULL, 1, 0, '2018-04-09 08:37:31', '2018-04-09 09:12:02'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, NULL, NULL, 1, 0, '2018-04-09 08:37:31', '2018-04-09 09:08:26'),
@@ -209,7 +209,7 @@ CREATE TABLE `menu_items` (
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', '#000000', NULL, 1, '2018-04-09 08:37:33', '2018-04-09 09:17:11', 'voyager.dashboard', 'null'),
 (2, 1, 'Media', '', '_self', 'voyager-images', '#000000', NULL, 5, '2018-04-09 08:37:33', '2018-04-09 09:17:37', 'voyager.media.index', 'null'),
-(3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2018-04-09 08:37:33', '2018-04-09 08:37:33', 'voyager.posts.index', NULL),
+(3, 1, 'Post', '', '_self', 'voyager-news', '#000000', NULL, 6, '2018-04-09 08:37:33', '2018-04-09 09:43:49', 'voyager.posts.index', 'null'),
 (4, 1, 'Users', '', '_self', 'voyager-person', '#000000', NULL, 3, '2018-04-09 08:37:33', '2018-04-09 09:23:00', 'voyager.users.index', 'null'),
 (5, 1, 'Categories', '', '_self', 'voyager-categories', '#000000', NULL, 8, '2018-04-09 08:37:33', '2018-04-09 09:23:24', 'voyager.categories.index', 'null'),
 (6, 1, 'Pages', '', '_self', 'voyager-file-text', '#000000', NULL, 7, '2018-04-09 08:37:33', '2018-04-09 09:23:13', 'voyager.pages.index', 'null'),
