@@ -502,6 +502,7 @@ return [
             'settings'     => 'Settings',
             'tools'        => 'Tools',
             'users'        => 'Users',
+            'realities'    => 'Realites',   
         ],
         'roles'      => [
             'admin' => 'Administrator',
