@@ -20,10 +20,10 @@
 
                         @if($i < count(Request::segments()) & $i > 0 && array_search('database',Request::segments())===false)
                             <li class="active">
-                                <a href="{{ $breadcrumb_url }}">{{ ucwords(str_replace('-', ' ', str_replace('_', ' ', Request::segment($i)))) }}</a>
+                                <a href="{{ $breadcrumb_url }}">{{ ucwords(str_replace('-', ' ', str_replace('_', ' ', __('voyager.seeders.segments.'.strtolower(Request::segment($i))) ))) }}</a>
                             </li>
                         @else
-                            <li>{{ ucwords(str_replace('-', ' ', str_replace('_', ' ', Request::segment($i)))) }}</li>
+                            <li>{{ ucwords(str_replace('-', ' ', str_replace('_', ' ', __('voyager.seeders.segments.'.strtolower(Request::segment($i)))  ))) }}</li>
                         @endif
 
                     @endif
