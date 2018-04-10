@@ -59,7 +59,9 @@
     <li class="{{ implode(" ", $listItemClass) }}">
         <a {!! $linkAttributes !!} target="{{ $item->target }}">
             <span class="icon {{ $item->icon_class }}"></span>
-            <span class="title">{{ __('voyager.seeders.menu_items.'.strtolower($transItem->title).'') }}</span>
+            <span class="title">
+                {{ __("voyager.seeders.menu_items.".strtolower($transItem->title)."") }}
+            </span>
         </a>
         @if($hasChildren)
             <div id="{{ $transItem->id }}-dropdown-element" class="panel-collapse collapse {{ (in_array('active', $listItemClass) ? 'in' : '') }}">

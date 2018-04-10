@@ -9,7 +9,7 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager.generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.__('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).'') }}
+        {{ __('voyager.generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.__("voyager.seeders.menu_items.".strtolower($dataType->display_name_plural)."") }}
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
@@ -64,7 +64,7 @@
                                 @else
                                     <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                         {{ $row->slugify }}
-                                        <label for="name">{{ __('voyager.seeders.data_rows.'.strtolower($row->display_name).'') }}</label>
+                                        <label for="name">{{ $row->display_name }}</label>
                                         @include('voyager::multilingual.input-hidden-bread-edit-add')
                                         @if($row->type == 'relationship')
                                             @include('voyager::formfields.relationship')

@@ -217,7 +217,7 @@ return [
         'content' => 'Nội dung',
         'details' => 'Thông tin chi tiết',
         'excerpt' => 'Đoạn trích <small> Mô tả nhỏ của bài viết này </ small>',
-        'image' => 'Đăng Hình ảnh',
+        'image' => 'Hình ảnh',
         'meta_description' => 'Mô tả',
         'meta_keywords' => 'Từ khoá',
         'new' => 'Tạo bài viết mới',

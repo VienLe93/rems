@@ -4,8 +4,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="{{ $dataType->icon }}"></i> {{ __('voyager.generic.viewing') }} {{ __('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).'') }} &nbsp;
-
+        <i class="{{ $dataType->icon }}"></i> {{ __('voyager.generic.viewing') }} {{ __("voyager.seeders.menu_items.".strtolower($dataType->display_name_plural)."") }} &nbsp;
         @can('edit', $dataTypeContent)
         <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
             <span class="glyphicon glyphicon-pencil"></span>&nbsp;
@@ -36,7 +35,7 @@
                         @endphp
 
                         <div class="panel-heading" style="border-bottom:0;">
-                            <h3 class="panel-title">{{ __('voyager.seeders.data_rows.'.strtolower($row->display_name).'') }}</h3>
+                            <h3 class="panel-title">{{ $row->display_name }}</h3>
                         </div>
 
                         <div class="panel-body" style="padding-top:0;">
