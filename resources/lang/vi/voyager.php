@@ -476,7 +476,7 @@ return [
             ],
             'post' => [
                 'singular' => 'Đăng',
-                'plural' => 'bài đăng',
+                'plural' => 'Bài đăng',
             ],
             'role' => [
                 'singular' => 'Vai trò',
