@@ -5,13 +5,11 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-
         @if (strlen(strstr(__('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).''), '.'))>0)
                 {{ $dataType->display_name_plural }}
             @else
                 {{ __('voyager.generic.viewing') }} {{ __('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).'') }} &nbsp;
             @endif
-
         @can('edit', $dataTypeContent)
         <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
             <span class="glyphicon glyphicon-pencil"></span>&nbsp;
