@@ -60,7 +60,11 @@
         <a {!! $linkAttributes !!} target="{{ $item->target }}">
             <span class="icon {{ $item->icon_class }}"></span>
             <span class="title">
-                {{ __("voyager.seeders.menu_items.".strtolower($transItem->title)."") }}
+                @if (strlen(strstr(__('voyager.seeders.menu_items.'.strtolower($item->title).''), '.'))>0)
+                    {{ $item->title }}
+                @else
+                    {{ __('voyager.seeders.menu_items.'.strtolower($item->title).'') }}
+                @endif
             </span>
         </a>
         @if($hasChildren)

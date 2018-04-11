@@ -5,7 +5,12 @@
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="{{ $dataType->icon }}"></i> {{ __("voyager.seeders.menu_items.".strtolower($dataType->display_name_plural)."") }}
+            <i class="{{ $dataType->icon }}"></i>
+            @if (strlen(strstr(__('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).''), '.'))>0)
+                {{ $dataType->display_name_plural }}
+            @else
+                {{ __('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).'') }}
+            @endif
         </h1>
         @can('add',app($dataType->model_name))
             <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
@@ -61,7 +66,13 @@
                                             @if ($isServerSide)
                                                 <a href="{{ $row->sortByUrl() }}">
                                             @endif
-                                            {{ __("voyager.seeders.data_rows.".strtolower($row->display_name)."") }}
+
+                                            @if (strlen(strstr(__('voyager.seeders.data_rows.'.strtolower($row->display_name).''), '.'))>0)
+                                                {{ $row->display_name }}
+                                            @else
+                                                {{ __('voyager.seeders.data_rows.'.strtolower($row->display_name).'') }}
+                                            @endif
+
                                             @if ($isServerSide)
                                                 @if ($row->isCurrentSortField())
                                                     @if (!isset($_GET['sort_order']) || $_GET['sort_order'] == 'asc')

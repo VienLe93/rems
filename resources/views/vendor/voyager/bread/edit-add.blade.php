@@ -9,7 +9,11 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager.generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.__("voyager.seeders.menu_items.".strtolower($dataType->display_name_plural)."") }}
+        @if (strlen(strstr(__('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).''), '.'))>0)
+            {{ __('voyager.generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.$dataType->display_name_plural }}
+        @else
+            {{ __('voyager.generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.__('voyager.seeders.menu_items.'.strtolower($dataType->display_name_plural).'') }}
+        @endif
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
