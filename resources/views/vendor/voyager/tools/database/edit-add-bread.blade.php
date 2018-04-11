@@ -9,9 +9,9 @@
     </div>
     @php
         $isModelTranslatable = (!isset($isModelTranslatable) || !isset($dataType)) ? false : $isModelTranslatable;
-        if (isset($dataType->name)) {
-            $table = __('voyager.seeders.menu_items.'.strtolower($dataType->name).'');
-        }
+        @if (isset($dataType->name))
+            {{ $table = __('voyager.seeders.menu_items.'.strtolower($dataType->name).'') }}
+        @endif
     @endphp
     @include('voyager::multilingual.language-selector')
 @stop

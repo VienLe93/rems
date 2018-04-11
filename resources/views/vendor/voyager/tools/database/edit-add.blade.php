@@ -4,14 +4,9 @@
     <h1 class="page-title">
         <i class="voyager-data"></i>
         @if($db->action == 'update')
-            @if(Session::get('locale') == 'vi')
-                {{ __('voyager.seeders.table.editing') .' '.__('voyager.seeders.table.table') .' '.$db->table->name }}
-            @else
-                {{ __('voyager.seeders.table.editing') .' '.$db->table->name .' '.__('voyager.seeders.table.table') }}
-            @endif
-            
+            {{ "Editing {$db->table->name} table" }}
         @else
-            {{ __('voyager.seeders.table.new_table') }}
+            {{ 'New Table' }}
         @endif
     </h1>
 @stop
